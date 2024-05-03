@@ -42,8 +42,6 @@ for file in range(48000):
     X_ctest.append(features)
     Y_ctest.append(label)
 
-print("done extracting")
-
 # splitting the training set into 2 parts
 X_train_split, X_test_split, Y_train_split, Y_test_split = train_test_split(X_train, Y_train, test_size=0.1, random_state=42)
 
@@ -116,8 +114,6 @@ for file in range(48000):
   features = extract_features(filepath)
   predicted_label = predict_labels(svc, features, mean_value, std_dev, pca)
   predicted_labels.append((file, predicted_label[0]))
-
-print("done predicting")
 
 # appends the labels onto a csv file
 output_file_path = "predicted_labels.csv"
